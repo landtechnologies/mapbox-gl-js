@@ -1,5 +1,6 @@
 'use strict';
 
+const icu = require('mapbox-icu-js');
 const scriptDetection = require('../util/script_detection');
 const verticalizePunctuation = require('../util/verticalize_punctuation');
 
@@ -38,30 +39,15 @@ function Shaping(positionedGlyphs, text, top, bottom, left, right, writingMode) 
 
 const newLine = 0x0a;
 
-function breakLines(text, lineBreakPoints) {
-    const lines = [];
-    let start = 0;
-    lineBreakPoints.forEach(lineBreak => {
-        lines.push(text.substring(start, lineBreak));
-        start = lineBreak;
-    });
-
-    if (start < text.length) {
-        lines.push(text.substring(start, text.length));
-    }
-    return lines;
-}
-
 function shapeText(text, glyphs, maxWidth, lineHeight, horizontalAlign, verticalAlign, justify, spacing, translate, verticalHeight, writingMode) {
-    text = text.trim();
+    const logicalInput = text.trim();
     if (writingMode === WritingMode.vertical) text = verticalizePunctuation(text);
 
     const positionedGlyphs = [];
-    const shaping = new Shaping(positionedGlyphs, text, translate[1], translate[1], translate[0], translate[0], writingMode);
+    const shaping = new Shaping(positionedGlyphs, logicalInput, translate[1], translate[1], translate[0], translate[0], writingMode);
 
-    const lines = (writingMode === WritingMode.horizontal && maxWidth) ?
-        breakLines(text, determineLineBreaks(text, spacing, maxWidth, glyphs)) :
-        [text];
+    // Need to handle WritingMode::vertical -- what if something forces a line break?
+    const lines = icu.processBidirectionalText(logicalInput, determineLineBreaks(logicalInput, spacing, maxWidth, glyphs));
 
     shapeLines(shaping, glyphs, lines, lineHeight, horizontalAlign, verticalAlign, justify, translate, writingMode, spacing, verticalHeight);
 
