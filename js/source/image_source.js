@@ -146,7 +146,7 @@ class ImageSource extends Evented {
         this._prepareImage(this.map.painter.gl, this.image);
     }
 
-    _prepareImage(gl, image) {
+    _prepareImage(gl, image, resize) {
         if (this.tile.state !== 'loaded') {
             this.tile.state = 'loaded';
             this.tile.texture = gl.createTexture();
@@ -156,7 +156,9 @@ class ImageSource extends Evented {
             gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
             gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
             gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, image);
-        } else if (image instanceof window.HTMLVideoElement || image instanceof window.ImageData) {
+        } else if (resize) {
+            gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, image);
+        } else if (image instanceof window.HTMLVideoElement || image instanceof window.ImageData || image instanceof window.HTMLCanvasElement) {
             gl.bindTexture(gl.TEXTURE_2D, this.tile.texture);
             gl.texSubImage2D(gl.TEXTURE_2D, 0, 0, 0, gl.RGBA, gl.UNSIGNED_BYTE, image);
         }
