@@ -180,6 +180,11 @@
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/@mapbox/shelf-pack/-/shelf-pack-3.1.0.tgz#1edea9c0bf6715b217171ba60646c201af520f6a"
 
+"@mapbox/sphericalmercator@github:landtechnologies/sphericalmercator#24a1b89b4edc26fcfd6171d61c27e3a9ea2f885c":
+  version "1.0.5"
+  uid "24a1b89b4edc26fcfd6171d61c27e3a9ea2f885c"
+  resolved "https://codeload.github.com/landtechnologies/sphericalmercator/tar.gz/24a1b89b4edc26fcfd6171d61c27e3a9ea2f885c"
+
 "@mapbox/tiny-sdf@^1.1.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@mapbox/tiny-sdf/-/tiny-sdf-1.1.0.tgz#b0b8f5c22005e6ddb838f421ffd257c1f74f9a20"
@@ -7719,6 +7724,10 @@ pngjs@^3.0.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/pngjs/-/pngjs-3.2.0.tgz#fc9fcea1a8a375da54a51148019d5abd41dbabde"
 
+point-geometry@^0.0.0:
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/point-geometry/-/point-geometry-0.0.0.tgz#6fcbcad7a803b6418247dd6e49c2853c584daff7"
+
 portscanner@2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/portscanner/-/portscanner-2.1.1.tgz#eabb409e4de24950f5a2a516d35ae769343fbb96"
@@ -9912,15 +9921,9 @@ toposort@^1.0.0:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/toposort/-/toposort-1.0.6.tgz#c31748e55d210effc00fdcdc7d6e68d7d7bb9cec"
 
-tough-cookie@>=2.3.3, tough-cookie@~2.3.3:
-  version "2.3.3"
-  resolved "https://registry.yarnpkg.com/tough-cookie/-/tough-cookie-2.3.3.tgz#0b618a5565b6dea90bf3425d04d55edc475a7561"
-  dependencies:
-    punycode "^1.4.1"
-
-tough-cookie@^2.3.2, tough-cookie@~2.3.0:
-  version "2.3.2"
-  resolved "https://registry.yarnpkg.com/tough-cookie/-/tough-cookie-2.3.2.tgz#f081f76e4c85720e6c37a5faced737150d84072a"
+tough-cookie@>=2.3.3, tough-cookie@^2.3.2, tough-cookie@~2.3.0, tough-cookie@~2.3.3:
+  version "2.3.4"
+  resolved "https://registry.yarnpkg.com/tough-cookie/-/tough-cookie-2.3.4.tgz#ec60cee38ac675063ffc97a5c18970578ee83655"
   dependencies:
     punycode "^1.4.1"
 
