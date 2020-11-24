@@ -180,6 +180,11 @@
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/@mapbox/shelf-pack/-/shelf-pack-3.1.0.tgz#1edea9c0bf6715b217171ba60646c201af520f6a"
 
+"@mapbox/sphericalmercator@github:landtechnologies/sphericalmercator#24a1b89b4edc26fcfd6171d61c27e3a9ea2f885c":
+  version "1.0.5"
+  uid "24a1b89b4edc26fcfd6171d61c27e3a9ea2f885c"
+  resolved "https://codeload.github.com/landtechnologies/sphericalmercator/tar.gz/24a1b89b4edc26fcfd6171d61c27e3a9ea2f885c"
+
 "@mapbox/tiny-sdf@^1.1.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@mapbox/tiny-sdf/-/tiny-sdf-1.1.0.tgz#b0b8f5c22005e6ddb838f421ffd257c1f74f9a20"
@@ -5053,8 +5058,8 @@ he@1.1.x:
   resolved "https://registry.yarnpkg.com/he/-/he-1.1.1.tgz#93410fd21b009735151f8868c2f271f3427e23fd"
 
 highlight.js@^9.1.0:
-  version "9.12.0"
-  resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-9.12.0.tgz#e6d9dbe57cbefe60751f02af336195870c90c01e"
+  version "9.18.5"
+  resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-9.18.5.tgz#d18a359867f378c138d6819edfc2a8acd5f29825"
 
 hmac-drbg@^1.0.0:
   version "1.0.1"
@@ -7718,6 +7723,10 @@ pn@^1.0.0:
 pngjs@^3.0.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/pngjs/-/pngjs-3.2.0.tgz#fc9fcea1a8a375da54a51148019d5abd41dbabde"
+
+point-geometry@^0.0.0:
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/point-geometry/-/point-geometry-0.0.0.tgz#6fcbcad7a803b6418247dd6e49c2853c584daff7"
 
 portscanner@2.1.1:
   version "2.1.1"
